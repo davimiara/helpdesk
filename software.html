@@ -1,0 +1,61 @@
+<font color=red><b>(%ERROR_MESSAGE%)</b></font><br><br class=tiny>
+<table width=650 bgcolor="#CFDCE8">
+  <form method=post action="(%ENV_SCRIPT_NAME%)" name=newticket>
+  <input type=hidden name=cmd value=newticket>
+  <input type=hidden name=do value=1>
+  <input type=hidden name=pwd value="(%INPUT_pwd%)">
+  <input type=hidden name=userid value="(%INPUT_userid%)">
+  <input type=hidden name=form value="(%INPUT_form%)">
+  <tr>
+    <td colspan=2>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align=right><b>Nome</b></td>
+    <td align=left><input type=text name=name size=25 value="(%INPUT_name%)"></td>
+  </tr>
+  <tr>
+    <td align=right><b>Email</b></td>
+    <td align=left><input type=text name=email size=25 value="(%INPUT_email%)"></td>
+  </tr>
+	<tr>
+		<td align=right class=lbl>Telefone</td>
+		<td align=left><input type=text size=25 name=xPhone value="(%INPUT_xPhone%)"></td>
+	</tr>
+	<tr>
+		<td align=right class=lbl>Setor</td>
+		<td align=left>
+			<select name=xDepartment>
+				<option></option>
+				<option>Acessoria Juridica</option>
+				<option>Acessoria Parlamentar</option>
+				<option>Informatica</option>
+			</select>
+		</td>
+	</tr>
+  <tr>
+    <td align=right><b>Assunto</b></td>
+    <td align=left><input type=text name=subject size=40 value="(%INPUT_subject%)"></td>
+  </tr>
+  <tr>
+    <td align=right><b><br>Menssagem</b></td>
+    <td align=right>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align=center colspan=2><textarea cols=60 rows=12 wrap=virtual name=message>(%INPUT_message%)</textarea>
+    <br><br class=tiny>
+    <input type=submit value="Envie sua requisição">
+    </td>
+    </form>
+  </tr>
+  <tr>
+    <td colspan=2>&nbsp;</td>
+  </tr>
+</table>
+	<script type="text/javascript"><!--
+	var i;
+	for (i = 0; i < document.forms['newticket'].xDepartment.options.length; i++) {
+	  if (document.forms['newticket'].xDepartment.options[i].text == '(%INPUT_xDepartment%)') {
+	    document.forms['newticket'].xDepartment.options[i].selected = true;
+	  }
+	}
+	//--></script>
